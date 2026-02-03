@@ -1,0 +1,22 @@
+
+classDiagram
+    class MoodBoardGenerator {
+        -app Flask app
+        +generate_mood_board(photo: bytes, theme: str) MoodBoard
+    }
+    class MoodBoard {
+        -image_path str
+        -theme str
+        +__init__(image_path: str, theme: str)
+        +save() str
+    }
+    class FlaskApp {
+        +__init__()
+        +run_server() str
+    }
+    class TensorFlowModel {
+        +load_model() TensorFlowModel
+        +analyze_mood(photo: bytes) str
+    }
+    MoodBoardGenerator --> FlaskApp
+    MoodBoardGenerator --> TensorFlowModel

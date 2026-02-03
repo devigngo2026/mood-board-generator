@@ -1,0 +1,1 @@
+Create a Mood boardds generator through AI-based analysis, make it a saas project

@@ -1,0 +1,11 @@
+
+sequenceDiagram
+    participant U as User
+    participant MBG as MoodBoardGenerator
+    participant TF as TensorFlowModel
+    participant FA as FlaskApp
+    U->>MBG: upload_photo(photo: bytes, theme: str)
+    MBG->>TF: analyze_mood(photo: bytes)
+    TF-->>MBG: mood
+    MBG->>FA: run_server(mood: str)
+    FA-->>U: mood_board_url
