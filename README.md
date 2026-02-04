@@ -1,6 +1,23 @@
-# Mood Board Generator
+---
+title: Mood Board Generator
+emoji: 🎨
+colorFrom: purple
+colorTo: pink
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+license: mit
+short_description: AI-powered mood board generator - Analyze photos and create beautiful themed mood boards
+---
+
+# 🎨 Mood Board Generator
 
 An AI-powered mood board generator that analyzes the emotional content of photos and creates beautiful, themed mood boards.
+
+## ✨ Live Demo
+
+Try it now: [Mood Board Generator on Hugging Face](https://huggingface.co/spaces/alanie/mbg)
 
 ## 🎨 Features
 
@@ -14,13 +31,13 @@ An AI-powered mood board generator that analyzes the emotional content of photos
 
 ### Online (Hugging Face Spaces)
 
-Visit our live demo: [Mood Board Generator on Hugging Face](https://huggingface.co/spaces/YOUR_USERNAME/mood-board-generator)
+Visit our live demo: [https://huggingface.co/spaces/alanie/mbg](https://huggingface.co/spaces/alanie/mbg)
 
 ### Local Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/mood-board-generator.git
+git clone https://github.com/devigngo2026/mood-board-generator.git
 cd mood-board-generator
 
 # Install dependencies
@@ -114,3 +131,6 @@ For questions or feedback, please open an issue on GitHub.
 ---
 
 Made with ❤️ for designers and creatives
+
+**GitHub**: [devigngo2026/mood-board-generator](https://github.com/devigngo2026/mood-board-generator)  
+**Hugging Face**: [alanie/mbg](https://huggingface.co/spaces/alanie/mbg)
