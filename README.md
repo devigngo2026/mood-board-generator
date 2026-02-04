@@ -8,7 +8,7 @@ sdk_version: 4.44.0
 app_file: app.py
 pinned: false
 license: mit
-short_description: AI-powered mood board generator - Analyze photos and create beautiful themed mood boards
+short_description: AI-powered mood board generator with themes and styles
 ---
 
 # 🎨 Mood Board Generator
