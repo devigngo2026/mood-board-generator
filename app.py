@@ -129,8 +129,7 @@ with gr.Blocks(css=custom_css, theme=gr.themes.Soft(), title="Mood Board Generat
             
             image_input = gr.Image(
                 label="Upload Your Photo",
-                type="numpy",
-                height=300
+                type="numpy"
             )
             
             theme_input = gr.Dropdown(
@@ -167,8 +166,7 @@ with gr.Blocks(css=custom_css, theme=gr.themes.Soft(), title="Mood Board Generat
             gr.Markdown("### 🖼️ Your Mood Board")
             
             mood_board_output = gr.Image(
-                label="Generated Mood Board",
-                height=300
+                label="Generated Mood Board"
             )
             
             description_output = gr.Markdown(
