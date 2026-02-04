@@ -70,16 +70,18 @@ Your mood board has been generated based on the emotional tone detected in your 
 The colors, patterns, and composition reflect the {mood.lower()} atmosphere we identified.
         """.strip()
         
-        # Prepare analysis details
-        analysis = {
-            "Primary Mood": mood,
-            "Confidence": f"{confidence:.1%}",
-            "Theme": theme,
-            "Style": style,
-            **emotions
-        }
+        # Prepare analysis details as formatted string
+        analysis_text = f"""**Primary Mood**: {mood}
+**Confidence**: {confidence:.1%}
+**Theme**: {theme}
+**Style**: {style}
+
+**Emotions Detected**:
+"""
+        for emotion, value in emotions.items():
+            analysis_text += f"- {emotion}: {value}\n"
         
-        return mood_board, description, analysis
+        return mood_board, description, analysis_text
         
     except Exception as e:
         error_msg = f"Error processing image: {str(e)}"
@@ -88,7 +90,8 @@ The colors, patterns, and composition reflect the {mood.lower()} atmosphere we i
         traceback.print_exc()
         # Return placeholder on error
         placeholder = Image.new('RGB', (800, 600), color='lightgray')
-        return placeholder, error_msg, {"Error": str(e)}
+        error_analysis = f"**Error**: {str(e)}"
+        return placeholder, error_msg, error_analysis
 
 
 # Define theme and style options
@@ -173,8 +176,10 @@ with gr.Blocks(css=custom_css, theme=gr.themes.Soft(), title="Mood Board Generat
                 label="Analysis Description"
             )
             
-            analysis_output = gr.JSON(
-                label="📊 Detailed Analysis"
+            analysis_output = gr.Textbox(
+                label="📊 Detailed Analysis",
+                lines=10,
+                interactive=False
             )
     
     # Footer
