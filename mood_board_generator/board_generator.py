@@ -228,13 +228,19 @@ class BoardGenerator:
         """Add text overlay with mood and theme information"""
         draw = ImageDraw.Draw(board)
         
-        # Try to use a nice font, fallback to default
+        # Use default font (works on all platforms)
         try:
-            font_large = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 36)
-            font_small = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 18)
+            # Try to load a nice font if available
+            font_large = ImageFont.truetype("DejaVuSans.ttf", 36)
+            font_small = ImageFont.truetype("DejaVuSans.ttf", 18)
         except:
-            font_large = ImageFont.load_default()
-            font_small = ImageFont.load_default()
+            try:
+                # Fallback to any available font
+                font_large = ImageFont.load_default()
+                font_small = ImageFont.load_default()
+            except:
+                # If all else fails, skip text overlay
+                return board
         
         # Add mood text at top
         mood_text = f"{mood.upper()}"
