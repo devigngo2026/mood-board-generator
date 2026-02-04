@@ -202,6 +202,8 @@ with gr.Blocks(css=custom_css, theme=gr.themes.Soft(), title="Mood Board Generat
         outputs=[mood_board_output, description_output, analysis_output]
     )
 
+# Ensure demo is available at module level for Hugging Face Spaces
+app = demo
 
 # Launch for local testing
 if __name__ == "__main__":
