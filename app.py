@@ -111,7 +111,7 @@ demo = gr.Interface(
     ],
     outputs=[
         gr.Image(label="🖼️ Generated Mood Board"),
-        gr.Markdown(label="📝 Analysis Description"),
+        gr.Textbox(label="📝 Analysis Description", lines=5),
         gr.Textbox(label="📊 Detailed Analysis", lines=10)
     ],
     title="🎨 AI Mood Board Generator",
