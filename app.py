@@ -242,13 +242,13 @@ def main():
     interface = app.create_interface()
     
     # Launch the interface
-    interface.launch(
-        server_name="0.0.0.0",  # Allow external access
-        server_port=7860,        # Default Hugging Face Spaces port
-        share=False,             # Don't create a public link (HF Spaces handles this)
-        show_error=True          # Show detailed errors for debugging
-    )
+    interface.launch()
 
+
+# Create the interface for Hugging Face Spaces
+# This needs to be at module level for HF Spaces to detect it
+app = MoodBoardApp()
+demo = app.create_interface()
 
 if __name__ == "__main__":
-    main()
+    demo.launch()
